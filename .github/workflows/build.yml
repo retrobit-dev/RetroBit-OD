@@ -7,7 +7,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 concurrency:
@@ -73,6 +73,22 @@ jobs:
           path: out/*.apk
           if-no-files-found: error
           retention-days: 30
+
+      - name: Publish APK ke GitHub Release (tag: apk-latest)
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=apk-latest
+          notes="Build otomatis dari \`${GITHUB_REF_NAME}\` @ \`${GITHUB_SHA:0:7}\`.\n\n- \`RetroBit-OD-debug.apk\` — untuk dicoba (bisa di-install berdampingan, applicationId berakhiran .debug)\n- \`RetroBit-OD-release.apk\` — ditandatangani debug keystore, siap dipasang permanen\n\nSetelah pasang: buka app → izinkan overlay & abaikan optimasi baterai (XOS). Lihat README untuk checklist."
+          gh release delete "$tag" --repo "$GITHUB_REPOSITORY" --yes >/dev/null 2>&1 || true
+          gh release create "$tag" out/*.apk \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "RetroBit OD APK" \
+            --notes "$(printf '%b' "$notes")" \
+            --prerelease \
+            --target "$GITHUB_SHA"
+          echo "APK: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/$tag"
 
       - name: Lampirkan log error ke issue (biar bisa dibaca dari sandbox)
         if: failure()

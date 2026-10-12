@@ -42,7 +42,6 @@ class AmbientTileService : TileService() {
         tile.label = getString(
             if (prefs.ambientEnabled) R.string.tile_on else R.string.tile_off
         )
-        tile.description = getString(R.string.tile_hint)
         tile.updateTile()
     }
 }
