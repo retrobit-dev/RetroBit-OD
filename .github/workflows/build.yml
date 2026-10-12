@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [ "arena/1d4014a0-retrobit-od", "main" ]
+    paths-ignore: [ "README.md", "docs/**", "*.md" ]
   pull_request:
 
 permissions:

@@ -11,10 +11,25 @@ ketiga: menggambar sendiri jam/kartu di atas keyguard dengan piksel hitam pekat
 (piksel AMOLED yang tidak dipakai benar-benar mati), plus mode Daydream untuk saat
 dicharge.
 
-> ⚠️ Status: kode lengkap & siap di-build, tetapi **belum dikompilasi** di lingkungan
-> ini (sandbox tidak punya JDK/Android SDK). Buka di Android Studio, sync, lalu
-> jalankan — perbaiki error kecil kalau ada (mis. versi AGP/Kotlin yang diminta
-> Android Studio kamu lebih baru).
+> ✅ Status: **build hijau di GitHub Actions** dan APK-nya siap diunduh dari
+> [release `apk-latest`](https://github.com/retrobit-dev/RetroBit-OD/releases/tag/apk-latest)
+> (`RetroBit-OD-debug.apk` ±13 MB, `RetroBit-OD-release.apk` ±2,4 MB sudah di-minify R8).
+> CI di folder `.github/workflows/build.yml` akan membangun ulang + menimpa release itu
+> setiap kali ada push ke branch ini, jadi tidak wajib punya Android Studio untuk coba.
+
+## Unduh & pasang cepat
+
+1. Ambil **`RetroBit-OD-release.apk`** di
+   <https://github.com/retrobit-dev/RetroBit-OD/releases/tag/apk-latest>.
+2. Pasang lewat file manager (izinkan "install unknown apps") atau lewat adb:
+   `adb install -r -g RetroBit-OD-release.apk`
+3. Buka app → selesaikan checklist izin → nyalakan sakelar **Aktifkan Always On Display**
+   → tekan **Coba tampilkan 10 detik** untuk tes pertama.
+4. Kartu ASN: menu **Kartu ASN** → isi field / pilih gambar kartu → **Simpan & lihat 15 dtk**.
+
+Catatan: APK release ditandatangani *debug keystore* (cukup untuk pasang sendiri).
+Untuk Google Play atau update bertahap, buat keystore sendiri lalu isi
+`signingConfigs` di `app/build.gradle.kts` — kalau diganti key, install ulang (bukan update).
 
 ---
 
@@ -81,7 +96,7 @@ app/src/main/java/dev/retrobit/od/
                                    AutomationActivity, CardActivity
 ```
 
-## Build & install
+## Build sendiri (opsional)
 
 1. **Android Studio** (Ladybug atau lebih baru) → *Open* → pilih folder ini.
    `gradle/wrapper/gradle-wrapper.properties` sudah mengarah ke Gradle 8.9; kalau wrapper
