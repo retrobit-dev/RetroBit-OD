@@ -147,9 +147,9 @@
                 android:id="@+id/sliderFloor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:stepSize="5.0"
-                app:valueFrom="0.0"
-                app:valueTo="50.0" />
+                android:stepSize="5.0"
+                android:valueFrom="0.0"
+                android:valueTo="50.0" />
 
             <LinearLayout style="@style/RowItem">
 
@@ -216,9 +216,9 @@
                 android:id="@+id/sliderPeek"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:stepSize="5.0"
-                app:valueFrom="5.0"
-                app:valueTo="120.0" />
+                android:stepSize="5.0"
+                android:valueFrom="5.0"
+                android:valueTo="120.0" />
 
             <TextView
                 android:id="@+id/txtBright"
@@ -229,9 +229,9 @@
                 android:id="@+id/sliderBright"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:stepSize="1.0"
-                app:valueFrom="0.0"
-                app:valueTo="25.0" />
+                android:stepSize="1.0"
+                android:valueFrom="0.0"
+                android:valueTo="25.0" />
 
             <LinearLayout style="@style/RowItem">
 
