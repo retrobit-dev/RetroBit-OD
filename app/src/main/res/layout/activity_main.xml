@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_margin"
+        android:paddingTop="@dimen/screen_margin"
+        android:paddingEnd="@dimen/screen_margin"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.14"
+            android:text="@string/app_name"
+            android:textColor="@color/phosphor"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/header_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_panel"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                style="@style/RowItem"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/master_switch" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchMaster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/RowHint"
+                android:text="@string/master_hint" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/cyan"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/group_perm" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_panel"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/perm_overlay" />
+
+                <TextView
+                    android:id="@+id/txtPermOverlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPermOverlay"
+                    style="@style/PixelButton"
+                    android:text="@string/perm_open" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/RowHint"
+                android:text="@string/perm_overlay_hint" />
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/perm_battery" />
+
+                <TextView
+                    android:id="@+id/txtPermBattery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPermBattery"
+                    style="@style/PixelButton"
+                    android:text="@string/perm_open" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/RowHint"
+                android:text="@string/perm_battery_hint" />
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/perm_notif" />
+
+                <TextView
+                    android:id="@+id/txtPermNotif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPermNotif"
+                    style="@style/PixelButton"
+                    android:text="@string/perm_open" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/perm_write_settings" />
+
+                <TextView
+                    android:id="@+id/txtPermWrite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPermWrite"
+                    style="@style/PixelButton"
+                    android:text="@string/perm_open" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/perm_autostart" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPermAutostart"
+                    style="@style/PixelButton"
+                    android:text="@string/perm_open" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/RowHint"
+                android:text="@string/perm_autostart_hint" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/group_rules" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStyle"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/title_style" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCard"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/title_card" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAutomation"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/title_automation" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTest"
+                style="@style/PixelButton"
+                android:layout_width="wrap_content"
+                android:text="@string/btn_test" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReveal"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_card_once" />
+
+            <TextView
+                style="@style/RowHint"
+                android:layout_marginTop="8dp"
+                android:text="@string/test_running_note" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

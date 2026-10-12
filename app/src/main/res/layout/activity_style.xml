@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_margin">
+
+        <TextView
+            style="@style/RowHint"
+            android:text="@string/preview" />
+
+        <FrameLayout
+            android:id="@+id/previewHost"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:background="@color/black"
+            android:padding="0dp" />
+
+        <TextView
+            style="@style/RowHint"
+            android:text="@string/preview_hint" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/render_mode" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/groupMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeOverlay"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mode_overlay"
+                android:textSize="11sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeActivity"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mode_activity"
+                android:textSize="11sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeDream"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mode_dream"
+                android:textSize="11sp" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:id="@+id/txtModeHint"
+            style="@style/RowHint"
+            android:layout_marginTop="6dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDreamSettings"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/open_dream_settings"
+            android:visibility="gone" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/layout_preset" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/groupLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLayoutTop"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/layout_clock_top"
+                android:textSize="11sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLayoutCenter"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/layout_clock_center"
+                android:textSize="11sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLayoutCard"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/layout_card_full"
+                android:textSize="11sp" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/font_face" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/groupFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFontPixel"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/font_pixel" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFontLed"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/font_led" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/clock_scale" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/groupScale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScaleS"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/scale_s" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScaleM"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/scale_m" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScaleL"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/scale_l" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScaleXL"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/scale_xl" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/accent_color" />
+
+        <LinearLayout
+            android:id="@+id/colorRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/group_display" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_panel"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_glow" />
+
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchGlow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_scanlines" />
+
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchScan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_seconds" />
+
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_date" />
+
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_battery" />
+
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchBattery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_notif" />
+
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchNotif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_card_line" />
+
+                <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchCardLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

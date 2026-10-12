@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">RetroBit OD</string>
+
+    <!-- Dashboard -->
+    <string name="title_style">Gaya &amp; tampilan</string>
+    <string name="title_automation">Otomatisasi &amp; baterai</string>
+    <string name="title_card">Kartu ASN</string>
+    <string name="master_switch">Aktifkan Always On Display</string>
+    <string name="master_hint">Saat aktif, layanan latar depan menjaga jam pixel tetap tampil ketika layar mati.</string>
+    <string name="status_running">Layanan aktif</string>
+    <string name="status_stopped">Layanan mati</string>
+    <string name="status_will_show">Jam akan tampil saat layar dimatikan</string>
+    <string name="status_blocked_schedule">Dijadwalkan nonaktif sekarang</string>
+    <string name="status_blocked_battery">Baterai di bawah ambang</string>
+    <string name="status_blocked_charging">Menunggu dicharge</string>
+    <string name="status_blocked_proximity">Sensor proximity tertutup</string>
+    <string name="status_blocked_permission">Izin tampilan di atas aplikasi belum diberikan</string>
+    <string name="btn_test">Coba tampilkan 10 detik</string>
+    <string name="btn_card_once">Tampilkan kartu 20 detik</string>
+    <string name="perm_overlay">Izin: tampilkan di atas aplikasi lain</string>
+    <string name="perm_overlay_hint">Dipakai untuk menggambar jam di atas lockscreen. Tanpa ini, gunakan mode Kompatibilitas.</string>
+    <string name="perm_battery">Izin: abaikan optimasi baterai</string>
+    <string name="perm_battery_hint">Wajib di XOS 15, kalau tidak layanan sering dibunuh saat layar mati.</string>
+    <string name="perm_notif">Izin: akses notifikasi</string>
+    <string name="perm_notif_hint">Opsional. Hanya untuk menghitung jumlah notifikasi, isi pesan tidak dibaca/disimpan.</string>
+    <string name="perm_write_settings">Izin: ubah pengaturan sistem</string>
+    <string name="perm_write_settings_hint">Opsional. Diperlukan untuk memaksa brightness minimum saat AOD tampil.</string>
+    <string name="perm_autostart">Auto-start XOS</string>
+    <string name="perm_autostart_hint">Buka Info aplikasi → izinkan auto-start &amp; batari tak terbatas, agar AOD hidup setelah restart.</string>
+    <string name="perm_granted">Diberikan</string>
+    <string name="perm_denied">Belum</string>
+    <string name="perm_open">Buka</string>
+
+    <!-- Mode render -->
+    <string name="render_mode">Mode render</string>
+    <string name="mode_overlay">Overlay (disarankan)</string>
+    <string name="mode_activity">Kompatibilitas (Activity)</string>
+    <string name="mode_dream">Screensaver saat charging</string>
+    <string name="mode_overlay_hint">Gambar langsung di atas keyguard. Butuh izin overlay.</string>
+    <string name="mode_activity_hint">Untuk XOS yang memblokir overlay: memakai activity layar penuh.</string>
+    <string name="mode_dream_hint">Pakai Daydream sistem. Aktifkan di Setelan → Layar → Screensaver.</string>
+    <string name="open_dream_settings">Buka setelan screensaver</string>
+
+    <!-- Gaya -->
+    <string name="layout_preset">Tata letak</string>
+    <string name="layout_clock_top">Jam di atas</string>
+    <string name="layout_clock_center">Jam di tengah</string>
+    <string name="layout_card_full">Kartu penuh</string>
+    <string name="font_face">Font</string>
+    <string name="font_pixel">Pixel 5×7</string>
+    <string name="font_led">LED 7-segmen</string>
+    <string name="clock_scale">Ukuran jam</string>
+    <string name="accent_color">Warna aksen</string>
+    <string name="opt_glow">Efek glow CRT</string>
+    <string name="opt_scanlines">Garis scanline</string>
+    <string name="opt_seconds">Tampilkan detik</string>
+    <string name="opt_seconds_hint">Menambah refresh &amp; konsumsi baterai.</string>
+    <string name="opt_date">Tampilkan tanggal</string>
+    <string name="opt_battery">Tampilkan baterai</string>
+    <string name="opt_notif">Tampilkan notifikasi</string>
+    <string name="opt_card_line">Tampilkan kartu di bawah jam</string>
+    <string name="preview">Pratinjau langsung</string>
+    <string name="preview_hint">Ketuk pratinjau untuk menyegarkan.</string>
+
+    <!-- Otomasi -->
+    <string name="group_schedule">Jadwal</string>
+    <string name="opt_schedule">Pakai jadwal</string>
+    <string name="schedule_from">Mulai</string>
+    <string name="schedule_to">Selesai</string>
+    <string name="days">Hari</string>
+    <string name="group_saver">Penghemat baterai</string>
+    <string name="opt_only_charging">Hanya saat dicharge</string>
+    <string name="battery_floor">Mati jika baterai di bawah</string>
+    <string name="opt_temp_guard">Tahan jika HP panas</string>
+    <string name="peek_duration">Durasi tampil tiap layar mati</string>
+    <string name="peek_seconds"> detik</string>
+    <string name="duration_short">Jam &amp; info saja</string>
+    <string name="group_display">Tampilan</string>
+    <string name="brightness">Brightness saat AOD</string>
+    <string name="burn_in">Geser piksel anti burn-in</string>
+    <string name="burn_in_off">Mati</string>
+    <string name="opt_proximity">Sembunyikan saat di saku</string>
+    <string name="proximity_unsupported">Sensor proximity tidak tersedia di perangkat ini</string>
+    <string name="group_privacy">Privasi kartu</string>
+    <string name="opt_card_mask">Sensor kartu diburamkan otomatis</string>
+    <string name="opt_card_on_charge">Buka buram kartu otomatis saat dicharge</string>
+    <string name="card_hidden">KARTU TERSEMBUNYI</string>
+    <string name="card_hidden_hint">BUKA APP / TEKAN TOMBOL TAMPILKAN KARTU</string>
+    <string name="status_blocked_temp">Suhu perangkat tinggi, AOD ditahan</string>
+    <string name="status_dream_mode">Mode screensaver: atur di Setelan → Screensaver</string>
+
+    <!-- Kartu ASN -->
+    <string name="card_enable">Tampilkan kartu ASN di AOD</string>
+    <string name="card_mode">Sumber kartu</string>
+    <string name="card_mode_data">Data (dinormalisasi, tajam &amp; hemat)</string>
+    <string name="card_mode_image">Gambar kartu utuh</string>
+    <string name="card_field_name">Nama</string>
+    <string name="card_field_nip">NIP / NUPTK</string>
+    <string name="card_field_rank">Pangkat / Golongan</string>
+    <string name="card_field_position">Jabatan</string>
+    <string name="card_field_unit">Unit kerja</string>
+    <string name="card_field_institution">Instansi</string>
+    <string name="card_field_note">Catatan (opsional)</string>
+    <string name="card_field_qr">Isi QR (NIP, link, dsb.)</string>
+    <string name="card_photo">Pas foto</string>
+    <string name="card_image">Gambar kartu</string>
+    <string name="card_pick">Pilih gambar</string>
+    <string name="card_clear">Hapus</string>
+    <string name="card_save">Simpan</string>
+    <string name="card_saved">Kartu disimpan</string>
+    <string name="card_hint">Data disimpan hanya di HP kamu (tidak ada internet). Semua teks digambar dengan font pixel bawaan.</string>
+    <string name="card_label_name">NAMA</string>
+    <string name="card_label_nip">NIP</string>
+    <string name="card_label_rank">PANGKAT</string>
+    <string name="card_label_position">JABATAN</string>
+    <string name="card_label_unit">UNIT</string>
+    <string name="card_label_inst">INSTANSI</string>
+    <string name="card_header">IDENTITAS APARATUR SIPIL NEGARA</string>
+
+    <!-- Layanan / notifikasi -->
+    <string name="notif_ch_ambient">Status Always On Display</string>
+    <string name="notif_ch_perm">Kebutuhan izin</string>
+    <string name="notif_ongoing">AOD aktif · %1$s</string>
+    <string name="notif_ongoing_off">AOD siap, jam akan tampil saat layar mati</string>
+    <string name="notif_perm_overlay">Beri izin “tampilkan di atas aplikasi lain”</string>
+    <string name="notif_perm_overlay_body">Tanpa izin ini RetroBit OD tidak bisa menggambar di atas lockscreen.</string>
+    <string name="notif_action_stop">Matikan</string>
+    <string name="notif_action_open">Buka</string>
+    <string name="notif_test_body">Jam tampil 10 detik, layar dibiarkan redup.</string>
+    <string name="notif_test_title">Mode uji RetroBit OD</string>
+    <string name="tile_label">RetroBit AOD</string>
+    <string name="tile_on">AOD NYALA</string>
+    <string name="tile_off">AOD MATI</string>
+    <string name="tile_hint">Ketuk lagi saat AOD nyala untuk membuka kartu 20 detik</string>
+    <string name="notif_peek">Tampil %1$d dtk tiap layar mati</string>
+    <string name="notif_always">Layar dibiarkan nyala redup terus</string>
+    <string name="dream_label">RetroBit OD (screensaver)</string>
+    <string name="notif_listener_label">Penghitung notifikasi RetroBit OD</string>
+    <string name="notif_count">%1$d notifikasi</string>
+    <string name="battery_label">BAT %1$d%%</string>
+    <string name="charging_label">BAT %1$d%% · CAS</string>
+    <string name="fmt_minutes">%1$dm</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Batal</string>
+
+    <!-- label UI tambahan -->
+    <string name="header_subtitle">Always On Display pixel untuk Infinix GT 30 Pro · tanpa root</string>
+    <string name="group_perm">Izin yang dibutuhkan</string>
+    <string name="group_rules">Aturan &amp; uji coba</string>
+    <string name="opt_peek">Tampil sebentar lalu tidur</string>
+    <string name="opt_peek_hint">Mati otomatis setelah durasi di bawah. Matikan untuk AOD nyala terus.</string>
+    <string name="force_brightness">Paksa brightness lewat sistem</string>
+    <string name="force_brightness_hint">Untuk ROM yang mengabaikan brightness overlay (XOS sering begitu). Butuh izin ubah pengaturan.</string>
+    <string name="scale_s">S</string>
+    <string name="scale_m">M</string>
+    <string name="scale_l">L</string>
+    <string name="scale_xl">XL</string>
+    <string name="burn_off">Mati</string>
+    <string name="burn_1">1m</string>
+    <string name="burn_2">2m</string>
+    <string name="burn_5">5m</string>
+    <string name="day_sun">MIN</string>
+    <string name="day_mon">SEN</string>
+    <string name="day_tue">SEL</string>
+    <string name="day_wed">RAB</string>
+    <string name="day_thu">KAM</string>
+    <string name="day_fri">JUM</string>
+    <string name="day_sat">SAB</string>
+    <string name="btn_save">Simpan</string>
+    <string name="btn_save_preview">Simpan &amp; lihat 15 dtk</string>
+    <string name="not_supported">Tidak tersedia di perangkat ini</string>
+    <string name="fmt_time">%1$02d:%2$02d</string>
+    <string name="group_privacy_card">Privasi kartu</string>
+    <string name="card_enable_hint">Kalau aktif, kartu ikut digambar di AOD. Data tidak pernah keluar dari HP.</string>
+    <string name="notif_off">Akses notifikasi belum diberikan</string>
+    <string name="notif_on">Terhubung · %1$d notifikasi aktif</string>
+    <string name="overlay_on">Diizinkan</string>
+    <string name="overlay_off">Belum diizinkan</string>
+    <string name="battery_opt_on">Sudah dikecualikan</string>
+    <string name="battery_opt_off">Masih dioptimasi (sering dibunuh XOS)</string>
+    <string name="write_settings_on">Diizinkan</string>
+    <string name="write_settings_off">Belum diizinkan</string>
+    <string name="test_running_note">Saat uji coba, layar dibiarkan nyala redup. Setel timeout layar sistem ke 15 detik agar hemat.</string>
+</resources>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_margin">
+
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_marginTop="0dp"
+            android:text="@string/group_schedule" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_panel"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_schedule" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchSchedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFrom"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/schedule_from" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTo"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/schedule_to" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/RowLabel"
+                android:layout_marginTop="12dp"
+                android:text="@string/days" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/day0"
+                    style="@style/ChipToggle"
+                    android:checkable="true"
+                    android:text="@string/day_sun" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/day1"
+                    style="@style/ChipToggle"
+                    android:checkable="true"
+                    android:text="@string/day_mon" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/day2"
+                    style="@style/ChipToggle"
+                    android:checkable="true"
+                    android:text="@string/day_tue" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/day3"
+                    style="@style/ChipToggle"
+                    android:checkable="true"
+                    android:text="@string/day_wed" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/day4"
+                    style="@style/ChipToggle"
+                    android:checkable="true"
+                    android:text="@string/day_thu" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/day5"
+                    style="@style/ChipToggle"
+                    android:checkable="true"
+                    android:text="@string/day_fri" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/day6"
+                    style="@style/ChipToggle"
+                    android:checkable="true"
+                    android:text="@string/day_sat" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/group_saver" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_panel"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_only_charging" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchCharging"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtFloor"
+                style="@style/RowLabel"
+                android:text="@string/battery_floor" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderFloor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:stepSize="5.0"
+                app:valueFrom="0.0"
+                app:valueTo="50.0" />
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_temp_guard" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_proximity" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchProx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtProxHint"
+                style="@style/RowHint" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/group_display" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_panel"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_peek" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchPeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/RowHint"
+                android:text="@string/opt_peek_hint" />
+
+            <TextView
+                android:id="@+id/txtPeek"
+                style="@style/RowLabel"
+                android:text="@string/peek_duration" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderPeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:stepSize="5.0"
+                app:valueFrom="5.0"
+                app:valueTo="120.0" />
+
+            <TextView
+                android:id="@+id/txtBright"
+                style="@style/RowLabel"
+                android:text="@string/brightness" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderBright"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:stepSize="1.0"
+                app:valueFrom="0.0"
+                app:valueTo="25.0" />
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/force_brightness" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchForceBright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/RowHint"
+                android:text="@string/force_brightness_hint" />
+
+            <TextView
+                style="@style/RowLabel"
+                android:layout_marginTop="8dp"
+                android:text="@string/burn_in" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/groupBurn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/burn0"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/burn_off" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/burn1"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/burn_1" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/burn2"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/burn_2" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/burn5"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/burn_5" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+        </LinearLayout>
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/group_privacy_card" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_panel"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_card_mask" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchMask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/RowItem">
+
+                <TextView
+                    style="@style/RowLabel"
+                    android:text="@string/opt_card_on_charge" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchCardCharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
