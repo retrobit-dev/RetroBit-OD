@@ -64,7 +64,13 @@ jobs:
           cp app/build/outputs/apk/debug/app-debug.apk out/RetroBit-OD-debug.apk
           cp app/build/outputs/apk/release/app-release.apk out/RetroBit-OD-release.apk
           ls -la out
-          for f in out/*.apk; do echo "$f -> $(du -h "$f" | cut -f1)"; done
+          AAPT="$(ls -d "$ANDROID_HOME"/build-tools/*/aapt 2>/dev/null | tail -1)"
+          for f in out/*.apk; do
+            echo "== $f -> $(du -h "$f" | cut -f1)"
+            if [ -n "${AAPT:-}" ]; then
+              "$AAPT" dump badging "$f" | grep -E "^(package|sdkVersion|targetSdkVersion|application-label|launchable-activity|uses-permission|feature-for-sdk)" || true
+            fi
+          done
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
