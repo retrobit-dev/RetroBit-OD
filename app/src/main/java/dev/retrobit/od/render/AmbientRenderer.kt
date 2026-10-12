@@ -142,7 +142,7 @@ class AmbientRenderer(private val context: Context, private val prefs: Prefs) {
         state: RenderState
     ) {
         if (state.cardMasked) {
-            drawMask(canvas, w, cx, yTop, minOf(bottom - yTop, bu * 12f), bu)
+            drawMask(canvas, w, cx, yTop, bottom, bu)
             return
         }
         val c = card()

@@ -14,10 +14,10 @@ class NotificationMonitor : NotificationListenerService() {
         var activeCount: Int = 0
             private set
 
+        /** true kalau user sudah memberi akses notifikasi (UI cek lewat Settings.Secure,
+         *  karena listener bisa belum terikat saat layar dibuka). */
         @Volatile
         var granted: Boolean = false
-
-        /** Dipakai halaman izin: cek lewat Settings.Secure karena listener bisa belum terikat. */
     }
 
     override fun onListenerConnected() {
