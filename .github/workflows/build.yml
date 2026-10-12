@@ -65,10 +65,13 @@ jobs:
           cp app/build/outputs/apk/release/app-release.apk out/RetroBit-OD-release.apk
           ls -la out
           AAPT="$(ls -d "$ANDROID_HOME"/build-tools/*/aapt 2>/dev/null | tail -1)"
+          : > out/badging.txt
           for f in out/*.apk; do
-            echo "== $f -> $(du -h "$f" | cut -f1)"
+            echo "== $f -> $(du -h "$f" | cut -f1)" | tee -a out/badging.txt
             if [ -n "${AAPT:-}" ]; then
-              "$AAPT" dump badging "$f" | grep -E "^(package|sdkVersion|targetSdkVersion|application-label|launchable-activity|uses-permission|feature-for-sdk)" || true
+              "$AAPT" dump badging "$f" \
+                | grep -E "^(package:|sdkVersion|targetSdkVersion|application-label:|launchable-activity|uses-permission:)" \
+                | tee -a out/badging.txt || true
             fi
           done
 
@@ -97,6 +100,13 @@ jobs:
           Setelah install: buka app, izinkan "tampilkan di atas aplikasi lain" + "abaikan optimasi baterai"
           (wajib di XOS 15), lalu aktifkan sakelar AOD. Checklist lengkap ada di README.md.
           EOF
+          if [ -f out/badging.txt ]; then
+            echo >> "$notes"
+            echo 'Isi APK (aapt dump badging):' >> "$notes"
+            echo '```' >> "$notes"
+            cat out/badging.txt >> "$notes"
+            echo '```' >> "$notes"
+          fi
           gh release delete "$tag" --repo "$GITHUB_REPOSITORY" --yes >/dev/null 2>&1 || true
           gh release create "$tag" out/*.apk \
             --repo "$GITHUB_REPOSITORY" \
