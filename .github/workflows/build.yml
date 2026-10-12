@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 concurrency:
   group: build-${{ github.ref }}
@@ -18,6 +19,8 @@ jobs:
     name: Build APK (debug + release)
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,10 +53,10 @@ jobs:
           gradle-version: '8.9'
 
       - name: Assemble debug APK
-        run: gradle --no-daemon --stacktrace assembleDebug
+        run: bash scripts/gradle-task.sh assembleDebug
 
       - name: Assemble release APK
-        run: gradle --no-daemon --stacktrace assembleRelease
+        run: bash scripts/gradle-task.sh assembleRelease
 
       - name: Kumpulkan APK
         run: |
@@ -61,7 +64,7 @@ jobs:
           cp app/build/outputs/apk/debug/app-debug.apk out/RetroBit-OD-debug.apk
           cp app/build/outputs/apk/release/app-release.apk out/RetroBit-OD-release.apk
           ls -la out
-          for f in out/*.apk; do echo "::group::$f"; du -h "$f"; unzip -l "$f" | tail -5; echo "::endgroup::"; done
+          for f in out/*.apk; do echo "$f -> $(du -h "$f" | cut -f1)"; done
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -70,3 +73,24 @@ jobs:
           path: out/*.apk
           if-no-files-found: error
           retention-days: 30
+
+      - name: Lampirkan log error ke issue (biar bisa dibaca dari sandbox)
+        if: failure()
+        run: |
+          body=$(mktemp)
+          {
+            echo "Log build gagal pada commit ${GITHUB_SHA}. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo
+            for f in /tmp/gradle-*.log; do
+              [ -f "$f" ] || continue
+              echo "### $f"
+              echo '```'
+              tail -c 45000 "$f"
+              echo '```'
+            done
+          } > "$body"
+          # potong biar tidak melewati batas body issue
+          head -c 65000 "$body" > "$body.trim"
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "build gagal @ ${GITHUB_SHA:0:7}" \
+            --body-file "$body.trim"
